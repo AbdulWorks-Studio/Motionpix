@@ -1,0 +1,223 @@
+:root {
+    --bg-dark: #0a0a0b;
+    --accent: #00d2ff;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-area img { height: 80px; transition: 0.3s; }
+.logo-area img:hover { filter: drop-shadow(0 0 10px var(--accent)); }
+
+.nav-links { display: flex; list-style: none; gap: 40px; }
+.nav-links a { text-decoration: none; color: #ccc; font-size: 14px; transition: 0.3s; font-weight: 500; }
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero Section */
+.hero { text-align: center; padding: 60px 20px; }
+.hero h1 { 
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 70px;
+    color: var(--accent);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+    margin-bottom: 20px;
+}
+.hero p { color: #888; font-size: 18px; margin-bottom: 30px; }
+
+.search-bar input {
+    width: 100%; max-width: 600px;
+    padding: 15px 25px; border-radius: 30px;
+    border: 1px solid var(--border); background: var(--glass);
+    color: white; outline: none; transition: 0.3s;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+/* Card Media Fix */
+.card {
+    position: relative;
+    background: var(--glass);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 16/9;
+    transition: 0.4s ease;
+}
+
+.card-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover { border-color: var(--accent); }
+.card:hover .card-media { transform: scale(1.1); }
+
+/* Text Slide-up Animation */
+.card p {
+    position: absolute;
+    bottom: -65px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 30px 15px 15px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    font-size: 14px;
+    transition: bottom 0.4s ease;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.card:hover p { bottom: 0; }
+
+/* Footer */
+.footer { background: #050506; border-top: 1px solid var(--border); padding: 60px 5% 30px; margin-top: 50px; }
+.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+.footer-logo img { height: 70px; margin-bottom: 10px; }
+.footer-logo p { color: #666; font-size: 14px; max-width: 400px; line-height: 1.6; }
+.footer-logo h5 { color: var(--accent); margin-top: 10px; }
+
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { color: #888; text-decoration: none; font-size: 14px; transition: 0.3s; }
+.footer-links a:hover { color: var(--accent); }
+
+.footer-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.03); font-size: 13px; color: #444; }
+/* Download Button Style */
+.download-btn {
+    position: absolute;
+    top: 15px;
+    right: -50px; /* Shuru mein hide rahega */
+    background: var(--accent);
+    color: #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    z-index: 10;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+}
+
+.card:hover .download-btn {
+    right: 15px; /* Hover par andar aa jaye ga */
+}
+
+.download-btn:hover {
+    transform: scale(1.1);
+    background: #fff;
+}
+
+/* 1. Stylish Neon Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+/* 2. Card Glass Effect & Loading State */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3. Improved Search Bar */
+.search-bar input {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* 4. Smooth Entrance Animation for Cards */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+/* Mobile Friendly Fixes */
+@media (max-width: 768px) {
+    .navbar { 
+        padding: 10px;
+        flex-direction: column; 
+        gap: 10px; 
+    }
+    
+    .logo-area img { height: 50px; }
+
+    .hero h1 { font-size: 35px; }
+    .hero p { font-size: 14px; }
+
+    .grid-container { 
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+        gap: 15px; 
+        padding: 20px 3%;
+    }
+
+    /* Mobile par Download Button hamesha dikhao */
+    .download-btn {
+        right: 10px !important;
+        top: 10px !important;
+        opacity: 1 !important;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    /* Mobile par Title hamesha niche nazar aaye */
+    .card p {
+        bottom: 0 !important;
+        padding: 15px 10px 10px;
+        font-size: 11px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    }
+
+    /* Card height fix for mobile */
+    .card {
+        border-radius: 10px;
+    }
+}

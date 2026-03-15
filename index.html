@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotionPix | Live Wallpapers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo-area">
+            <img src="MotionPix Logo.png" alt="MotionPix">
+        </a>
+    </nav>
+
+    <header class="hero">
+        <h1>Live Wallpapers</h1>
+        <p>Make your desktop PC and mobile screen come alive with 4K free animated wallpaper</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Search wallpapers...">
+        </div>
+    </header>
+
+    <main class="grid-container">
+<div class="card">
+    <video muted loop playsinline class="card-media">
+        <source src="videos/batman.mp4" type="video/mp4">
+    </video>
+    
+    <a href="ZIP/batman.zip" download="" class="download-btn">
+        <i class="fas fa-download"></i>
+    </a>
+
+    <p>BatMan !</p>
+</div>
+<div class="card">
+    <video muted loop playsinline class="card-media">
+        <source src="videos/porshe 911.mp4" type="video/mp4">
+    </video>
+    
+    <a href="ZIP/porshe 911.zip" download="" class="download-btn">
+        <i class="fas fa-download"></i>
+    </a>
+
+    <p>Porshe 911</p>
+</div>
+        </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="MotionPix Logo.png" alt="MotionPix">
+                <p>MotionPix offers a premium collection of 4K live wallpapers and motion backgrounds, meticulously crafted to transform your desktop and mobile setup into a visual masterpiece.</p>
+                <h5>By Abdul Rehman</h5>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 MotionPix - All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Search System
+        const searchInput = document.querySelector('.search-bar input');
+        const cards = document.querySelectorAll('.card');
+
+        searchInput.addEventListener('keyup', (e) => {
+            const value = e.target.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector('p').innerText.toLowerCase();
+                card.style.display = title.includes(value) ? "block" : "none";
+            });
+        });
+
+        // Hover Play/Pause System
+        const allVideos = document.querySelectorAll('.card-media');
+        allVideos.forEach(video => {
+            const card = video.closest('.card');
+            card.addEventListener('mouseenter', () => video.play());
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</body>
+</html>
