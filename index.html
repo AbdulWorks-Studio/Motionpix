@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotionPix | HD & 4K Live Wallpapers</title>
+    <meta name="description" content="Free 4K live wallpapers and aesthetic backgrounds for desktop and mobile. Download HD motion wallpapers instantly.">
+
+    <!-- Social preview (Open Graph) -->
+    <meta property="og:title" content="MotionPix | HD & 4K Live Wallpapers">
+    <meta property="og:description" content="Free 4K live wallpapers and aesthetic backgrounds for desktop and mobile.">
+    <meta property="og:image" content="MotionPixIcon.png">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="MotionPixIcon.png">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to wallpapers</a>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo-area" aria-label="MotionPix home">
+            <img src="MotionPix Logo.png" alt="MotionPix">
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><button class="nav-btn active" data-sort="recent"><i class="fas fa-clock"></i> Recent</button></li>
+            <li><button class="nav-btn" data-sort="popular"><i class="fas fa-fire"></i> Popular</button></li>
+            <li><button class="nav-btn" data-sort="random"><i class="fas fa-random"></i> Random</button></li>
+            <li><button class="nav-btn" data-action="collections"><i class="fas fa-layer-group"></i> Collections</button></li>
+            <li><button class="nav-btn" data-action="favorites" id="favoritesBtn"><i class="fas fa-heart"></i> Favorites</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Welcome to MotionPix !</h1>
+        <p>Make your desktop PC and mobile screen aesthetic...</p>
+
+        <div class="search-bar">
+            <label for="wallpaper-search" class="sr-only" style="position:absolute;left:-9999px;">Search wallpapers...</label>
+            <input type="text" id="wallpaper-search" placeholder="Search wallpapers...">
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter wallpapers by category">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="characters">Characters</button>
+            <button class="filter-chip" data-filter="cars">Cars</button>
+            <button class="filter-chip" data-filter="desktop">Desktop</button>
+        </div>
+    </header>
+
+    <main class="grid-container" id="main-content">
+        <!-- Cards are generated automatically from wallpapers.js — don't edit this by hand -->
+    </main>
+
+    <p class="no-results">No wallpapers match your search. Try a different keyword or category.</p>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="MotionPix Logo.png" alt="MotionPix">
+                <p>MotionPix offers a premium collection of 4K wallpapers and aesthetic backgrounds, meticulously crafted to transform your desktop and mobile setup into a visual masterpiece.</p>
+                <h5>By Abdulworks-Studio</h5>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.tiktok.com/@quaid_911">Privacy Policy</a>
+                <a href="https://www.tiktok.com/@quaid_911">Terms of Service</a>
+                <a href="https://www.tiktok.com/@quaid_911">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 MotionPix - All Rights Reserved.
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Preview Modal -->
+    <div class="preview-modal" id="previewModal" aria-hidden="true">
+        <div class="preview-overlay" data-close></div>
+        <div class="preview-content" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+            <button class="preview-close" data-close aria-label="Close preview"><i class="fas fa-times"></i></button>
+
+            <div class="preview-media-wrap">
+                <video class="preview-media" id="previewVideo" muted loop autoplay playsinline controls style="display:none;"></video>
+                <img class="preview-media" id="previewImage" alt="" style="display:none;">
+            </div>
+
+            <div class="preview-info">
+                <h3 id="previewTitle">Wallpaper</h3>
+                <a href="#" id="previewDownload" class="preview-download-btn" download>
+                    <i class="fas fa-download"></i> Download
+                </a>
+            </div>
+
+            <div class="related-section">
+                <h4>Related Wallpapers</h4>
+                <div class="related-grid" id="relatedGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="wallpapers.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

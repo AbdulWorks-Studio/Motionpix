@@ -1,0 +1,29 @@
+# MotionPix | HD & 4K Live Wallpapers
+
+MotionPix is a modern, fast, and fully responsive web application designed for downloading high-definition and 4K live/static wallpapers for desktop and mobile setups.
+
+## 🚀 Features
+
+- **Dynamic Media Support:** Seamlessly handles both MP4 live video wallpapers and static HD images.
+- **Advanced Filtering & Search:** Instant keyword search alongside category chips (Superheroes, Cars, Abstract).
+- **Sorting Options:** Easily sort wallpapers by *Recent*, *Popular*, or *Random*.
+- **Interactive Preview Modal:** Built-in preview player with related wallpapers suggestions.
+- **Favorites System:** Save/bookmark favorite wallpapers using local storage.
+- **Fully Responsive:** Optimized for both desktop and mobile devices with smooth animations and touch support.
+- **Accessibility:** Includes skip links, keyboard focus styles, and reduced-motion support.
+
+## 🛠️ Built With
+
+- **HTML5 / CSS3** (Custom glassmorphism design, CSS variables, neon scrollbars)
+- **Vanilla JavaScript** (ES6+, IntersectionObserver API, LocalStorage)
+- **FontAwesome Icons**
+- **Google Fonts** (Permanent Marker, Segoe UI)
+
+## 📁 File Structure
+
+```text
+├── index.html         # Main application structure & styles
+├── wallpapers.js      # Wallpaper data source
+├── style.css          # (Optional external stylesheet if linked)
+├── MotionPix Logo.png # Logo asset
+└── MotionPixIcon.png  # Favicon & Open Graph image
