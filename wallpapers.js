@@ -1,16 +1,6 @@
 
 const wallpapersData = [
     {
-        id: 'waterfall_desktop',
-        title: 'Waterfall Desktop Wallpaper',
-        category: 'desktop',
-        type: 'image',
-        date: '2026-07-24',
-        downloads: 0,
-        full: 'items/waterfall1.png',
-        zip: 'https://docs.google.com/uc?export=download&id=1RJHw730GaDGbNG6yK0l2vREWpsZulkjN'
-    },
-    {
         id: 'kitten_wallpaper',
         title: 'Cat Desktop Wallpaper',
         category: 'desktop',
